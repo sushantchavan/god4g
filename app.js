@@ -29,6 +29,7 @@ app.use(stylus.middleware({
     force: true
 }));
 app.use(express.static(path.join(__dirname, 'public')));
+app.locals.moment = require('moment');
 // development only
 if ('development' == app.get('env')) {
   app.use(express.errorHandler());
